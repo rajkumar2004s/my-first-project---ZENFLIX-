@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex justify-center items-center flex-col pt-22">
-      <div class="relative h-[100vh] w-[85%] overflow-hidden rounded-2xl">
+      <div class="relative h-[100vh] w-[86%] overflow-hidden rounded-2xl">
         <video
           :src="videoUrl"
           autoplay
@@ -33,7 +33,7 @@
 import { ref } from 'vue'
 import Trending from './Trending.vue'
 import Originals from './Originals.vue'
-import videoUrl from '@/assets/liger-trailer.mp4'
+import videoUrl from '@/assets/avatar-trailer.mp4'
 
 const loading = ref(true)
 
