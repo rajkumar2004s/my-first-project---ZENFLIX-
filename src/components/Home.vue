@@ -33,7 +33,7 @@
 import { ref } from 'vue'
 import Trending from './Trending.vue'
 import Originals from './Originals.vue'
-import videoUrl from '@/assets/liger-trailer-1080p.mp4'
+import videoUrl from '@/assets/liger-trailer.mp4'
 
 const loading = ref(true)
 
