@@ -1,0 +1,30 @@
+@import './base.css';
+@import 'tailwindcss';
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* #app {
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: rgb(237, 238, 238);
+  transition: 0.4s;
+  padding: 3px;
+} */
