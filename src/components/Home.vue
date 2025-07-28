@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="flex justify-center items-center flex-col pt-22">
-      <div class="relative h-[100vh] w-[86%] overflow-hidden rounded-2xl">
+    <div class="flex justify-center items-center flex-col pt-26">
+      <div class="relative h-[475px] w-[75%] overflow-hidden rounded-2xl">
         <video
           :src="videoUrl"
           autoplay
@@ -9,20 +9,17 @@
           loop
           playsinline
           preload="auto"
-          class="absolute top-0 left-0 w-full h-[75%] object-cover scale-125"
+          class="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
           @loadeddata="handleLoaded"
         ></video>
 
-        <div
-          v-if="loading"
-          class="flex justify-center items-center text-red-500 text-4xl text-center pt-8 pl-12 h-[67h]"
-        >
-          <div class="pt-46">
-            <font-awesome-icon spin icon="fa-solid fa-spinner text-red-500" />
-          </div>
+        <!-- Loading Spinner -->
+        <div v-if="loading" class="absolute inset-0 flex justify-center items-center bg-black/40">
+          <font-awesome-icon spin icon="fa-solid fa-spinner" class="text-red-500 text-4xl" />
         </div>
       </div>
 
+      <!-- Other Components -->
       <Trending />
       <Originals />
     </div>

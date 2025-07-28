@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white pr-4 pl-12 pr-8">
+  <div class="text-white pr-4 pl-12 pr-8 pt-8">
     <h1 class="text-2xl font-bold pl-16 t hover:text-blue-500">Trending Now</h1>
 
     <div
