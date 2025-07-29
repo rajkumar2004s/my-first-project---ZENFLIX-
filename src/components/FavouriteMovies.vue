@@ -16,24 +16,22 @@
       </div>
     </div>
 
-    <div class="grid grid-cols- 2 md:grid-cols-4 gap-6 min-h-[67vh]" v-else>
+    <div class="flex flex-wrap min-h-[67vh] pl-14" v-else>
       <div
         v-for="movie in favouritesStore.favourites"
         :key="movie.id"
-        class="bg-[#1e1e1e] p-4 rounded-lg shadow h-[240px] relative"
+        class="p-4 rounded-lg shadow relative"
       >
         <router-link :to="`movie/${movie.id}`">
           <img
             :src="movie.poster_path"
             :alt="movie.title"
-            class="rounded h-[80%] w-full object-cover"
+            class="w-[160px] h-[210px] object-cover rounded-xl hover:scale-105 z-10 transition"
           />
         </router-link>
-        <i
-          @click="removefavourites(movie.id)"
-          class="z-16 absolute top-[9%] right-[7%] fa-regular text-2xl fa-heart cursor-pointer text-red-500"
-        />
-        <p class="mt-2 pt-2 text-sm">{{ movie.title }}</p>
+        <span @click="removefavourites(movie.id)" class="z-16 absolute top-[6%] left-[72%] text-2xl"
+          >❤️</span
+        >
       </div>
     </div>
   </div>

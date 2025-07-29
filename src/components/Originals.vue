@@ -1,6 +1,6 @@
 <template>
   <div class="text-white pt-6 pr-4 pl-12 pr-8 pb-8">
-    <h1 class="text-2xl font-bold pl-16 t hover:text-blue-500">Originals</h1>
+    <h1 class="text-2xl font-bold pl-16 t hover:text-red-500">Originals</h1>
 
     <div
       v-if="loading"
@@ -22,7 +22,7 @@
         <ArrowLeftCircleIcon class="w-6 h-6 text-white text-xl" />
       </button>
 
-      <div ref="carousel" class="flex overflow-x-auto scroll-smooth no-scrollbar gap-8 px-4 pt-4">
+      <div ref="carousel" class="flex overflow-x-auto scroll-smooth no-scrollbar gap-2 px-4 pt-4">
         <div
           v-for="movie in movies"
           :key="movie.id"
@@ -32,18 +32,15 @@
             <img
               :src="movie.poster_path"
               :alt="movie.title"
-              class="w-[16vw] h-[40vh] rounded-xl object-cover"
+              class="w-[170px] h-[220px] object-cover rounded-xl hover:scale-100 transition p-2"
             />
           </router-link>
-          <i
+          <span
             @click="toggleFavourite(movie)"
-            :class="[
-              'z-16 absolute top-[9%] right-[7%] cursor-pointer',
-              isFavourite(movie.id)
-                ? 'fa-regular  text-2xl fa-heart text-red-500'
-                : 'fa-regular  text-2xl fa-heart text-white',
-            ]"
-          />
+            class="z-16 absolute top-[9%] right-[7%] cursor-pointer text-2xl"
+          >
+            {{ isFavourite(movie.id) ? '❤️' : '🤍' }}
+          </span>
         </div>
       </div>
       <router-view />

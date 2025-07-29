@@ -2,9 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Login from '@/components/Login.vue'
 import { faL } from '@fortawesome/free-solid-svg-icons'
 
-// ✅ Simple authentication check (update as per your logic: cookies, JWT, Pinia, etc.)
 function isAuthenticated() {
-  return !!localStorage.getItem('token') // Or use cookies / Vuex / Pinia
+  return !!localStorage.getItem('token')
 }
 
 const router = createRouter({
@@ -63,7 +62,6 @@ const router = createRouter({
   },
 })
 
-// ✅ Navigation guard for protected routes
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !isAuthenticated()) {
     next('/login')

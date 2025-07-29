@@ -18,16 +18,15 @@
       </div>
     </div>
 
-    <div class="grid grid-cols- 2 md:grid-cols-4 gap-6 min-h-[67vh]" v-else>
-      <div
-        v-for="movie in movies"
-        :key="movie.id"
-        class="bg-[#1e1e1e] p-4 rounded-lg shadow h-[210px] transition hover:scale-105"
-      >
+    <div class="flex flex-wrap min-h-[67vh] pl-17" v-else>
+      <div v-for="movie in movies" :key="movie.id">
         <router-link :to="`movie/${movie.id}`">
-          <img :src="movie.backdrop_path || movie.poster_path" :alt="movie.title" class="rounded" />
+          <img
+            :src="movie.backdrop_path || movie.poster_path"
+            :alt="movie.title"
+            class="w-[165px] h-[220px] object-cover rounded-xl hover:scale-105 z-10 transition p-2"
+          />
         </router-link>
-        <p class="mt-2 pt-2 text-sm">{{ movie.title }}</p>
       </div>
     </div>
   </div>
@@ -80,10 +79,4 @@ watch(
 )
 </script>
 
-<style scoped>
-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-</style>
+<style scoped></style>

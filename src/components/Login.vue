@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <p class="logo">ZENFLIX</p>
+    <h1 class="logo text-center">ZENFLIX</h1>
 
-    <div class="flex justify-center items-center relative z-20 pr-26 pt-12">
+    <div class="flex justify-center items-center relative z-20">
       <div class="bg-[#141414] w-[25%] h-[50vh] p-6 rounded-md card">
         <h1 class="text-white text-2xl text-center pb-4 log">Login</h1>
 
@@ -83,8 +83,8 @@
       </div>
     </div>
 
-    <p class="text-white">Username : raju</p>
-    <p class="text-white">Password : zenflix</p>
+    <p class="text-white pl-24">Username : raju</p>
+    <p class="text-white pl-24">Password : zenflix</p>
   </div>
 </template>
 
@@ -119,14 +119,14 @@ svg {
 }
 .container {
   position: relative;
-
   height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  padding-left: 150px;
-  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 img {
@@ -152,9 +152,10 @@ img {
 .logo {
   font-weight: bold;
   font-family: 'Anton', sans-serif;
-  font-size: 34px;
+  font-size: 40px;
   color: #ff4c4c;
   letter-spacing: 2px;
+  padding-bottom: 35px;
 }
 input {
   font-family: Arial, Helvetica, sans-serif;

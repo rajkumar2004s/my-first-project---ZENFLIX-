@@ -1,8 +1,8 @@
 <template>
-  <div class="absolute top-0 left-0 w-full flex justify-between items-center p-2 z-10 fixed">
+  <div class="absolute top-0 left-0 w-full flex justify-between items-center p-2 z-10 fixed nav">
     <div class="overlay"></div>
 
-    <div class="flex items-center gap-4 pl-26">
+    <div class="flex items-center gap-4 pl-26 x">
       <router-link :to="'/'" class="z-10">
         <p class="logo">ZENFLIX</p>
       </router-link>
@@ -10,14 +10,17 @@
       <div class="pl-10 gap-6 flex">
         <router-link
           to="/"
-          :class="['z-10 font-medium', route.path === '/' ? 'text-blue-500' : 'text-white']"
+          :class="['z-10 font-medium home ', route.path === '/' ? 'text-red-500' : 'text-white']"
         >
           Home
         </router-link>
 
         <router-link
           to="/popular"
-          :class="['z-10 font-medium', route.path === '/popular' ? 'text-blue-500' : 'text-white']"
+          :class="[
+            'z-10 font-medium home',
+            route.path === '/popular' ? 'text-red-500' : 'text-white',
+          ]"
         >
           Popular
         </router-link>
@@ -25,8 +28,8 @@
         <router-link
           to="/favourites"
           :class="[
-            'z-10 font-medium',
-            route.path === '/favourites' ? 'text-blue-500' : 'text-white',
+            'z-10 font-medium home',
+            route.path === '/favourites' ? 'text-red-500' : 'text-white',
           ]"
         >
           Favourites
@@ -53,7 +56,7 @@
         <button>
           <img
             :src="'https://res.cloudinary.com/dwdekki8t/image/upload/v1753264813/Avatar_1_cznbfr.png'"
-            class="w-12 z-10 p-1"
+            class="w-12 z-10 pt-2"
           />
         </button>
       </router-link>
@@ -125,5 +128,24 @@ input {
   color: white;
   background: transparent;
   outline: none;
+}
+
+@media screen and (max-width: 576px) {
+  .home {
+    display: none;
+  }
+  .logo {
+    font-size: 16px;
+  }
+  .nav {
+    padding: 10px;
+  }
+  input {
+    width: 160px;
+  }
+  .x {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 </style>

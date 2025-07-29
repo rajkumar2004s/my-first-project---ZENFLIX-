@@ -1,30 +1,70 @@
 <template>
-  <div class="flex flex-col justify-center items-center pb-8 pt-4 i">
-    <div>
-      <h1 class="text-2xl text-white font-bold pl-20 t hover:text-blue-500">Contact Us</h1>
-      <div class="text-white text-xl pt-4 flex gap-6 pl-16">
-        <a href="https://www.linkedin.com/in/raju03/" target="_blank">
-          <i class="fa-brands fa-linkedin"></i
-        ></a>
-        <a href="https://www.instagram.com/_raju.uu/" target="_blank">
-          <i class="fa-brands fa-instagram"></i
-        ></a>
-        <a href="https://zenflix-ten.vercel.app/" target="_blank"
-          ><i class="fa-brands fa-google"></i
-        ></a>
-        <a href="https://x.com/RBhootla86833?t=V_qqA9THCrLt2_j1jOd1Ag&s=08 " target="_blank"
-          ><i class="fa-brands fa-twitter"></i
-        ></a>
+  <footer class="bg-[#141414] text-[#757575] text-sm py-8 px-6 font-sans pl-28">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-red-500 text-4xl font-bold pb-4">ZENFLIX</h1>
+
+      <p class="mb-6 pb-2">
+        Questions? Call
+        <a href="#" class="underline hover:underline">000-800-919-1694</a>
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-y-4 mb-6">
+        <a href="#" class="hover:underline block">FAQ</a>
+        <a href="#" class="hover:underline block">Help Centre</a>
+        <a href="#" class="hover:underline block">Account</a>
+        <a href="#" class="hover:underline block">Media Centre</a>
+        <a href="#" class="hover:underline block">Investor Relations</a>
+        <a href="#" class="hover:underline block">Jobs</a>
+        <a href="#" class="hover:underline block">Ways to Watch</a>
+        <a href="#" class="hover:underline block">Terms of Use</a>
+        <a href="#" class="hover:underline block">Privacy</a>
+        <a href="#" class="hover:underline block">Cookie Preferences</a>
+        <a href="#" class="hover:underline block">Corporate Information</a>
+        <a href="#" class="hover:underline block">Speed Test</a>
+        <a href="#" class="hover:underline block">Legal Notices</a>
+        <a href="#" class="hover:underline block">Only on Zenflix</a>
+        <p class="text-sm">Zenflix India</p>
+        <div>
+          <a href="#" class="hover:underline block">Contact Us</a>
+
+          <div class="flex gap-6 text-white text-xl mb-6 mt-6 pt-4">
+            <a
+              href="https://www.linkedin.com/in/raju03/"
+              target="_blank"
+              class="hover:text-[#0077b5]"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/_raju.uu/"
+              target="_blank"
+              class="hover:text-pink-500"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://zenflix-ten.vercel.app/" target="_blank" class="hover:text-red-500">
+              <i class="fa-brands fa-google"></i>
+            </a>
+            <a
+              href="https://x.com/RBhootla86833?t=V_qqA9THCrLt2_j1jOd1Ag&s=08"
+              target="_blank"
+              class="hover:text-blue-400"
+            >
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <style scoped>
-.t {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+footer {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
 }
-.i {
-  background-color: rgba(28, 28, 28, 0.5);
+h1 {
+  font-weight: bold;
 }
 </style>

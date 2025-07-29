@@ -6,18 +6,15 @@
           <img
             :src="movie.poster_path"
             :alt="movie.title"
-            class="w-[270px] h-[170px] object-cover rounded-xl hover:scale-105 transition"
+            class="w-[170px] h-[220px] object-cover rounded-xl hover:scale-105 z-10 transition p-2"
           />
         </router-link>
-        <i
+        <span
           @click="toggleFavourite(movie)"
-          :class="[
-            'z-16 absolute top-[9%] right-[7%] cursor-pointer',
-            isFavourite(movie.id)
-              ? 'fa-regular  text-2xl fa-heart text-red-500'
-              : 'fa-regular  text-2xl fa-heart text-white',
-          ]"
-        />
+          class="z-16 absolute top-[9%] right-[7%] cursor-pointer text-2xl"
+        >
+          {{ isFavourite(movie.id) ? '❤️' : '🤍' }}
+        </span>
       </div>
     </div>
 
@@ -46,7 +43,6 @@ import axios from 'axios'
 import { ref, onMounted } from 'vue'
 import { useFavouritesStore } from '@/stores/favourites'
 const favouritesStore = useFavouritesStore()
-// const iconchange = ref(false)
 
 const loading = ref(true)
 const error = ref(false)

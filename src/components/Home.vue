@@ -13,13 +13,11 @@
           @loadeddata="handleLoaded"
         ></video>
 
-        <!-- Loading Spinner -->
         <div v-if="loading" class="absolute inset-0 flex justify-center items-center bg-black/40">
           <font-awesome-icon spin icon="fa-solid fa-spinner" class="text-red-500 text-4xl" />
         </div>
       </div>
 
-      <!-- Other Components -->
       <Trending />
       <Originals />
     </div>
@@ -38,3 +36,12 @@ const handleLoaded = () => {
   loading.value = false
 }
 </script>
+<style scoped>
+@media screen and (max-width: 756) {
+  video {
+    height: 40vh;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+</style>
