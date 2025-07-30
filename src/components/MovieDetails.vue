@@ -15,6 +15,7 @@
           {{ movie.release_date.split('-')[0] }}
         </p>
         <p class="mt-2 w-[632px]">{{ movie.overview }}</p>
+
         <button
           class="mt-4 px-4 py-2 w-[120px] rounded text-white font-medium relative overflow-hidden z-10 border border-white group"
         >
