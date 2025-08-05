@@ -104,12 +104,13 @@ const togglePassword = () => {
 }
 
 const Login = () => {
-  if (username.value.toLowerCase() === 'raju' && password.value.toLowerCase() === 'zenflix') {
+  if (username.value === 'raju' && password.value === 'zenflix') {
+    localStorage.setItem('token', 'true')
+    localStorage.setItem('showWelcome', 'true')
     router.push('/')
-  } else {
-    error.value = 'Please Enter Valid Credentials ..'
   }
 }
+localStorage.setItem('showWelcome', 'true')
 </script>
 
 <style scoped>

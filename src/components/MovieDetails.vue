@@ -113,8 +113,9 @@ watch(() => route.params.id, fetchMovieDetails)
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .movie:hover {
-  color: rgb(167, 94, 219);
+  color: rgb(230, 13, 13);
 }
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

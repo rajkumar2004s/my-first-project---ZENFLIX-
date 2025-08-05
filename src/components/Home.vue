@@ -1,5 +1,9 @@
 <template>
-  <div>
+  <div v-if="!showContent" class="h-screen flex justify-center items-center bg-black">
+    <h1 class="welcome animate-welcome">Welcome to Zenflix💥</h1>
+  </div>
+
+  <div v-else>
     <div class="flex justify-center items-center flex-col pt-26">
       <div class="relative h-[475px] w-[75%] overflow-hidden rounded-2xl">
         <video
@@ -23,25 +27,68 @@
     </div>
   </div>
 </template>
-
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import Trending from './Trending.vue'
 import Originals from './Originals.vue'
 import videoUrl from '@/assets/avatar-trailer.mp4'
 
+const router = useRouter()
 const loading = ref(true)
+const showContent = ref(false)
 
 const handleLoaded = () => {
   loading.value = false
 }
+
+onMounted(() => {
+  const shouldShowWelcome = localStorage.getItem('showWelcome') === 'true'
+
+  if (shouldShowWelcome) {
+    setTimeout(() => {
+      showContent.value = true
+      localStorage.removeItem('showWelcome')
+    }, 2000)
+  } else {
+    showContent.value = true
+  }
+})
 </script>
+
 <style scoped>
 @media screen and (max-width: 756) {
   video {
     height: 40vh;
     width: 100%;
     object-fit: cover;
+  }
+}
+.welcome {
+  font-size: 70px;
+  color: red;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInZoom 2s ease-out forwards;
+  transition: smooth;
+  font-family: cursive;
+  cursor: pointer;
+  font-style: italic;
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 </style>

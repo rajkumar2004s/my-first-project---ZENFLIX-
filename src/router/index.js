@@ -43,7 +43,6 @@ const router = createRouter({
       path: '/favourites',
       name: 'FavouriteMovies',
       component: () => import('@/components/FavouriteMovies.vue'),
-      meta: { requiresAuth: false },
     },
     {
       path: '/logout',

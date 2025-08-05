@@ -27,13 +27,22 @@
       </div>
     </div>
 
-    <router-link :to="'/login'" class="flex justify-center pt-10 z-10">
-      <button class="bg-red-500 p-2 rounded-sm text-white w-[120px] z-10">Logout</button>
-    </router-link>
+    <div class="pt-12">
+      <button @click="logout" class="bg-red-500 p-2 rounded-sm text-white w-[120px] z-10">
+        Logout
+      </button>
+    </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+const logout = () => {
+  router.push('/login')
+}
+</script>
 <style scoped>
 h1 {
   font-weight: bold;
