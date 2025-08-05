@@ -48,7 +48,7 @@ onMounted(() => {
   if (shouldShowWelcome) {
     setTimeout(() => {
       showContent.value = true
-      // localStorage.removeItem('showWelcome')
+      localStorage.removeItem('showWelcome')
     }, 2000)
   } else {
     showContent.value = true
