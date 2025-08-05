@@ -11,6 +11,7 @@
     <div v-else-if="error" class="text-red-500 flex justify-center items-center flex-col p-12 pt-2">
       <img
         class="w-10"
+        alt="error "
         :src="'https://res.cloudinary.com/dwdekki8t/image/upload/v1753622110/alert-triangle_tegsdw.png'"
       />
       <p class="text-white p-2 pb-2">Something went wrong. Please try again</p>

@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '@/components/Login.vue'
-import { faL } from '@fortawesome/free-solid-svg-icons'
 
 function isAuthenticated() {
   return !!localStorage.getItem('token')
@@ -48,7 +47,6 @@ const router = createRouter({
       path: '/logout',
       name: 'Logout',
       component: () => import('@/components/Logout.vue'),
-      meta: { requiresAuth: false },
     },
     {
       path: '/:pathMatch(.*)*',

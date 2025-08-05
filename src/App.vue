@@ -1,8 +1,8 @@
 <template>
   <div class="bg-[#111111]">
-    <Navbar v-if="route.path != '/login'" />
+    <Navbar v-if="route.path != '/login' && route.name !== 'NotFound'" />
     <router-view />
-    <Footer v-if="route.path != '/login'" />
+    <Footer v-if="route.path != '/login' && route.name !== 'NotFound'" />
   </div>
 </template>
 

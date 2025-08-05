@@ -28,7 +28,8 @@
       <div>
         <img
           :src="'https://res.cloudinary.com/dwdekki8t/image/upload/v1753620525/Background-Complete_gbzrew.png'"
-          class="error pl-28"
+          class="pl-28"
+          :alt="'error'"
         />
         <p class="text-white text-xl pt-4">
           Something went wrong please check your internet Connection 😎
