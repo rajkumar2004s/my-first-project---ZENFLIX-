@@ -14,6 +14,7 @@
             placeholder="Enter your name"
             class="w-full mb-4 text-black"
             @keyup.enter="Login"
+            v-tooltip="'Enter your name'"
           />
         </div>
 
@@ -25,6 +26,7 @@
             placeholder="Enter your password"
             @keyup.enter="Login"
             class="w-full pr-10 text-black"
+            v-tooltip="'Enter the Username'"
           />
           <span
             class="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer text-black-400"
@@ -105,9 +107,10 @@ const togglePassword = () => {
 
 const Login = () => {
   if (username.value === 'raju' && password.value === 'zenflix') {
-    localStorage.setItem('token', 'true')
-    localStorage.setItem('showWelcome', 'true')
+    localStorage.setItem('token', 'your-auth-token')
     router.push('/')
+  } else {
+    error.value = 'Please enter valid Credentials..'
   }
 }
 localStorage.setItem('showWelcome', 'true')
@@ -115,7 +118,7 @@ localStorage.setItem('showWelcome', 'true')
 
 <style scoped>
 svg {
-  color: grey;
+  color: rgb(33, 33, 33);
   z-index: 10px;
 }
 .container {
