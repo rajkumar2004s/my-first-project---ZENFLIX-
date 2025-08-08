@@ -3,7 +3,7 @@
     <h1 class="logo text-center">ZENFLIX</h1>
 
     <div class="flex justify-center items-center relative z-20">
-      <div class="bg-[#141414] md:w-[25%] h-[50vh] p-6 rounded-md card">
+      <div class="bg-[#141414] md:w-[25%] w-[80vw] h-[45vh] md:h-[50vh] p-6 rounded-md card">
         <h1 class="text-white text-2xl text-center pb-4 log">Login</h1>
 
         <label class="text-gray-400 bold">USERNAME</label>
@@ -140,7 +140,7 @@ img {
 }
 
 .log {
-  font-weight: 600;
+  font-weight: bold;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .card {

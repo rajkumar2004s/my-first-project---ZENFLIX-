@@ -1,17 +1,17 @@
 <template>
-  <div class="md:pt-24 md:pl-20 md:pr-24 md:pb-6">
-    <div class="md:flex md:flex-wrap md:gap-6 grid grid-cols-2 justify-center pt-4 pb-4">
-      <div class="relative" v-for="movie in movies" :key="movie.id">
+  <div class="md:pt-24 md:pl-26 md:pr-24 md:pb-6">
+    <div class="md:flex md:flex-wrap md:gap-2 grid grid-cols-2 pt-4 pb-4">
+      <div v-for="movie in movies" :key="movie.id" class="p-2 rounded-lg shadow relative">
         <router-link :to="`popular/${movie.id}`">
           <img
             :src="movie.poster_path"
             :alt="movie.title"
-            class="w-[170px] h-[220px] object-cover rounded-xl hover:scale-105 z-10 transition p-2"
+            class="md:w-[160px] md:h-[210px] h-[230px] w-[180px] object-cover rounded-xl hover:scale-105 z-10 transition"
           />
         </router-link>
         <span
           @click="toggleFavourite(movie)"
-          class="z-16 absolute top-[9%] right-[7%] cursor-pointer text-2xl"
+          class="z-16 absolute top-[6%] left-[72%] text-xl md:text-2xl"
         >
           {{ isFavourite(movie.id) ? '❤️' : '🤍' }}
         </span>

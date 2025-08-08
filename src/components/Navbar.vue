@@ -141,7 +141,7 @@ input {
     padding: 10px;
   }
   input {
-    width: 90px;
+    width: 130px;
     height: 25px;
     font-size: 10px;
   }

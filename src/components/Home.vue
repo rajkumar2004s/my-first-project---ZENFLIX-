@@ -7,7 +7,7 @@
 
   <div v-else>
     <div class="flex justify-center items-center flex-col pt-4 md:pt-26">
-      <div class="relative h-[130px] md:h-[475px] w-full md:w-[85%] overflow-hidden md:rounded-xl">
+      <div class="relative h-[250px] md:h-[475px] w-full md:w-[85%] overflow-hidden md:rounded-xl">
         <video
           :src="videoUrl"
           autoplay
@@ -59,7 +59,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-@media screen and (max-width: 756) {
+@media screen and (max-width: 576) {
   video {
     height: 40vh;
     width: 100%;
