@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 text-white pt-24">
+  <div class="md:p-6 text-white pt-2 md:pt-24">
     <div
       v-if="loading"
       class="flex justify-center items-center text-red-500 text-2xl text-center pt-8"
@@ -16,20 +16,22 @@
       </div>
     </div>
 
-    <div class="flex flex-wrap min-h-[67vh] pl-14" v-else>
+    <div class="grid grid-cols-2 md:flex md:flex-wrap min-h-[67vh] pl-0 pr-0 md:pl-18" v-else>
       <div
         v-for="movie in favouritesStore.favourites"
         :key="movie.id"
-        class="p-4 rounded-lg shadow relative"
+        class="p-2 md:p-3 rounded-lg shadow relative"
       >
         <router-link :to="`movie/${movie.id}`">
           <img
             :src="movie.poster_path"
             :alt="movie.title"
-            class="w-[160px] h-[210px] object-cover rounded-xl hover:scale-105 z-10 transition"
+            class="md:w-[160px] md:h-[210px] object-cover rounded hover:scale-105 z-10 transition"
           />
         </router-link>
-        <span @click="removefavourites(movie.id)" class="z-16 absolute top-[6%] left-[72%] text-2xl"
+        <span
+          @click="removefavourites(movie.id)"
+          class="z-16 absolute top-[6%] left-[72%] text-xl md:text-2xl"
           >❤️</span
         >
       </div>

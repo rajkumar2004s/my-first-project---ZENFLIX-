@@ -1,23 +1,23 @@
 <template>
-  <div class="text-white bg-[#111] pb-4" v-if="movie">
+  <div class="text-white bg-[#111] pb-4 pt-3 md:pt-0" v-if="movie">
     <div
-      class="relative object-cover bg-cover bg-center h-[80vh] w-[99vw] shadow-md"
+      class="relative object-cover bg-cover bg-center w-[100vw] h-[60vh] md:h-[80vh] md:w-[99vw] shadow-md"
       :style="{ backgroundImage: `url(${movie.backdrop_path})` }"
     >
       <div
-        class="absolute bottom-0 p-8 bg-gradient-to-t from-black w-full flex flex-col pl-28 gap-4"
+        class="absolute bottom-0 p-8 bg-gradient-to-t from-black w-full flex flex-col md:pl-28 gap-2 md:gap-4"
       >
-        <h1 class="text-4xl font-bold movie">{{ movie.title }}</h1>
-        <p class="text-sm">
+        <h1 class="text-2xl md:text-4xl font-bold movie">{{ movie.title }}</h1>
+        <p class="md:text-sm text-[10px]">
           {{ movie.runtime }} mins
           <span class="ua"> U/A </span>
 
           {{ movie.release_date.split('-')[0] }}
         </p>
-        <p class="mt-2 w-[632px]">{{ movie.overview }}</p>
+        <p class="mt-2 text-[10px] md:text-[16px] md:w-[632px]">{{ movie.overview }}</p>
 
         <button
-          class="mt-4 px-4 py-2 w-[120px] rounded text-white font-medium relative overflow-hidden z-10 border border-white group"
+          class="mt-4 px-4 py-2 md:w-[120px] rounded text-white font-medium relative overflow-hidden z-10 border border-white group"
         >
           <span
             class="absolute inset-0 bg-gradient-to-r from-[#6297ec] to-[#cb27c0] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
@@ -29,14 +29,16 @@
       </div>
     </div>
 
-    <div class="flex pl-26 flex-row justify-start gap-x-24 pt-4 pr-26">
+    <div
+      class="grid grid-cols-2 pl-8 md:flex md:pl-26 md:flex-row md:justify-start md:text-[16px] text-[10px] md:gap-x-24 pt-4 md:pr-26"
+    >
       <div>
         <strong>Genres</strong>
         <div v-for="genre in movie.genres" :key="genre.id">
           <p>{{ genre.name }}</p>
         </div>
       </div>
-      <div>
+      <div class="pb-4 md:pb-0">
         <strong>Languages</strong>
         <div v-for="lang in movie.spoken_languages" :key="lang.id">
           <p>{{ lang.english_name }}</p>
@@ -56,10 +58,10 @@
       </div>
     </div>
 
-    <div class="pt-10 pl-26">
-      <h2 class="text-2xl font-bold mb-4 movie">More like this</h2>
+    <div class="pt-10 md:pl-26">
+      <h2 class="text-2xl font-bold md:pl-0 pl-3 mb-4 movie">More like this</h2>
 
-      <div class="flex flex-row flex-wrap">
+      <div class="grid grid-cols-2 md:flex md:flex-row md:flex-wrap">
         <div v-for="similar in movie.similar_movies" :key="similar.id">
           <router-link :to="`/movie/${similar.id}`">
             <img

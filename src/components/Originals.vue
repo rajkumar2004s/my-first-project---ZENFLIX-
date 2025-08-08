@@ -1,6 +1,6 @@
 <template>
-  <div class="text-white pt-6 pr-4 pl-12 pr-8 pb-8">
-    <h1 class="text-2xl font-bold pl-16 t hover:text-red-500">Originals</h1>
+  <div class="text-white pl-0 md:pl-12 md:pr-8 pt-8 pb-4">
+    <h1 class="text-2xl font-bold pl-6 md:pl-16 t hover:text-red-500">Originals</h1>
 
     <div
       v-if="loading"
@@ -11,6 +11,7 @@
     <div v-else-if="error" class="text-red-500 flex justify-center items-center flex-col p-12 pt-2">
       <img
         class="w-10"
+        alt="error "
         :src="'https://res.cloudinary.com/dwdekki8t/image/upload/v1753622110/alert-triangle_tegsdw.png'"
       />
       <p class="text-white p-2 pb-2">Something went wrong. Please try again</p>
@@ -18,11 +19,17 @@
     </div>
 
     <div v-else class="flex items-center relative">
-      <button @click="scrollLeft" class="text-white p-2 rounded-full hover:bg-white/20">
+      <button
+        @click="scrollLeft"
+        class="text-white p-2 rounded-full hover:bg-white/20 hidden md:block"
+      >
         <ArrowLeftCircleIcon class="w-6 h-6 text-white text-xl" />
       </button>
 
-      <div ref="carousel" class="flex overflow-x-auto scroll-smooth no-scrollbar gap-2 px-4 pt-4">
+      <div
+        ref="carousel"
+        class="flex overflow-x-auto scroll-smooth no-scrollbar md:gap-2 md:px-4 pt-4"
+      >
         <div
           v-for="movie in movies"
           :key="movie.id"
@@ -32,7 +39,7 @@
             <img
               :src="movie.poster_path"
               :alt="movie.title"
-              class="w-[170px] h-[220px] object-cover rounded-xl hover:scale-100 transition p-2"
+              class="md:w-[170px] h-[200px] md:h-[220px] object-cover rounded-xl hover:scale-100 transition p-2"
             />
           </router-link>
           <span
@@ -44,7 +51,10 @@
         </div>
       </div>
       <router-view />
-      <button @click="scrollRight" class="text-white p-2 rounded-full hover:bg-white/20 btn">
+      <button
+        @click="scrollRight"
+        class="text-white p-2 rounded-full hover:bg-white/20 btn hidden md:block"
+      >
         <ArrowRightCircleIcon class="w-6 h-6 text-white text-xl" />
       </button>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 text-white pt-24">
+  <div class="p-6 text-white pt-18 md:pt-24">
     <div
       v-if="loading"
       class="flex justify-center h-[70vh] items-center text-red-500 text-2xl text-center"
@@ -18,13 +18,13 @@
       </div>
     </div>
 
-    <div class="flex flex-wrap min-h-[67vh] pl-17" v-else>
+    <div class="grid grid-cols-2 md:flex md:flex-wrap md:pl-20 min-h-[67vh]" v-else>
       <div v-for="movie in movies" :key="movie.id">
         <router-link :to="`movie/${movie.id}`">
           <img
             :src="movie.backdrop_path || movie.poster_path"
             :alt="movie.title"
-            class="w-[165px] h-[220px] object-cover rounded-xl hover:scale-105 z-10 transition p-2"
+            class="w-[150px] md:w-[165px] h-[200px] md:h-[220px] object-cover rounded-xl hover:scale-105 z-10 transition p-2"
           />
         </router-link>
       </div>

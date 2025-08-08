@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <div class="pr-26 flex items-center gap-4 relative z-10">
+    <div class="md:pr-26 flex items-center gap-4 relative z-10">
       <transition name="fade">
         <div v-if="showSearch">
           <input
@@ -50,13 +50,13 @@
         </div>
       </transition>
 
-      <MagnifyingGlassIcon class="w-8 h-6 text-white cursor-pointer" @click="toggle" />
+      <MagnifyingGlassIcon class="w-4 md:w-8 h-6 text-white cursor-pointer" @click="toggle" />
 
       <router-link to="/logout">
         <button>
           <img
             :src="'https://res.cloudinary.com/dwdekki8t/image/upload/v1753264813/Avatar_1_cznbfr.png'"
-            class="w-12 z-10 pt-2"
+            class="w-6 md:w-12 z-10 pt-2"
           />
         </button>
       </router-link>
@@ -141,7 +141,9 @@ input {
     padding: 10px;
   }
   input {
-    width: 160px;
+    width: 90px;
+    height: 25px;
+    font-size: 10px;
   }
   .x {
     padding-left: 0;

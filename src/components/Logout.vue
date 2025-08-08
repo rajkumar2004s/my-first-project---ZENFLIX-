@@ -1,9 +1,9 @@
 <template>
   <div class="h-[83vh] text-black bg-[#49494a] flex flex-col justify-center items-center relative">
-    <h1 class="text-3xl text-start">Account</h1>
+    <h1 class="md:text-3xl text-xl text-start">Account</h1>
 
     <div class="flex gap-4 pt-6">
-      <strong class="text-[#94a3b8] text-[16px]">Membership:</strong>
+      <strong class="text-[#94a3b8] md:text-[16px]">Membership:</strong>
       <div class="pl-8">
         <p class="pb-1">Email:</p>
         <input
@@ -19,11 +19,11 @@
         placeholder="passsword"
       />
     </div>
-    <div class="flex pr-30 gap-4 pt-6">
-      <strong class="text-[#94a3b8] text-[16px]">Plan Details:</strong>
-      <div class="pl-8">
+    <div class="flex pr-30 gap-4 pt-6 md:pl-0 pl-10">
+      <strong class="text-[#94a3b8] md:text-[16px]">Plan Details:</strong>
+      <div class="pl-18 md:pl-8">
         <p class="pb-1">Premium</p>
-        <p class="border-1 border-[#94a3b8] p-1 text-sm rounded">Ultra HD</p>
+        <p class="border-1 border-[#94a3b8] p-1 text-[10px] md:text-sm rounded">Ultra HD</p>
       </div>
     </div>
 
@@ -55,5 +55,10 @@ h1 {
 
 input {
   outline: none;
+}
+@media (max-width: 576px) {
+  input {
+    width: 140px;
+  }
 }
 </style>

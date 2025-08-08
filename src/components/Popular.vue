@@ -1,6 +1,6 @@
 <template>
-  <div class="pt-24 pl-20 pr-24 pb-6">
-    <div class="flex flex-wrap gap-6 justify-center pt-4 pb-4">
+  <div class="md:pt-24 md:pl-20 md:pr-24 md:pb-6">
+    <div class="md:flex md:flex-wrap md:gap-6 grid grid-cols-2 justify-center pt-4 pb-4">
       <div class="relative" v-for="movie in movies" :key="movie.id">
         <router-link :to="`popular/${movie.id}`">
           <img

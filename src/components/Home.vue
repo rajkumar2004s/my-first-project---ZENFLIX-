@@ -1,11 +1,13 @@
 <template>
-  <div v-if="!showContent" class="h-screen flex justify-center items-center bg-black">
-    <h1 class="welcome animate-welcome">Welcome to Zenflix💥</h1>
+  <div v-if="!showContent" class="h-[60vh] md:h-screen flex justify-center items-center bg-black">
+    <h1 class="welcome animate-welcome text-[40px] text-center md:text-[70px]">
+      Welcome to Zenflix💥
+    </h1>
   </div>
 
   <div v-else>
-    <div class="flex justify-center items-center flex-col pt-26">
-      <div class="relative h-[475px] w-[75%] overflow-hidden rounded-2xl">
+    <div class="flex justify-center items-center flex-col pt-4 md:pt-26">
+      <div class="relative h-[130px] md:h-[475px] w-full md:w-[85%] overflow-hidden md:rounded-xl">
         <video
           :src="videoUrl"
           autoplay
@@ -13,7 +15,7 @@
           loop
           playsinline
           preload="auto"
-          class="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
+          class="absolute top-0 left-0 w-full h-full md:p-0 p-1 object-cover rounded-xl md:rounded-xl"
           @loadeddata="handleLoaded"
         ></video>
 
@@ -65,7 +67,6 @@ onMounted(() => {
   }
 }
 .welcome {
-  font-size: 70px;
   color: red;
   font-weight: bold;
   opacity: 0;
