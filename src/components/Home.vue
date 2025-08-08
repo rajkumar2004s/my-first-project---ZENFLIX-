@@ -1,7 +1,7 @@
 <template>
   <div v-if="!showContent" class="h-[60vh] md:h-screen flex justify-center items-center bg-black">
     <h1 class="welcome animate-welcome text-[40px] text-center md:text-[70px]">
-      Welcome to Zenflix💥
+      Welcome to Zenflix..
     </h1>
   </div>
 
