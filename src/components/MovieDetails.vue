@@ -66,7 +66,7 @@
           <router-link :to="`/movie/${similar.id}`">
             <img
               :src="similar.poster_path"
-              class="md:w-[170px] md:h-[220px] w-full h-[210px] object-cover rounded-xl hover:scale-105 transition p-1 md:p-2"
+              class="md:w-[170px] md:h-[220px] w-full h-[250px] object-cover rounded-xl hover:scale-105 transition p-2 md:p-2"
               :alt="similar.title"
             />
           </router-link>

@@ -41,7 +41,7 @@
       <transition name="fade">
         <div v-if="showSearch">
           <input
-            class="px-3 py-1 rounded-md transition-all duration-300"
+            class="px-3 md:py-2 py-4 rounded-md transition-all duration-300"
             placeholder="Search movies..."
             type="text"
             v-model="searchInput"
@@ -135,10 +135,11 @@ input {
     display: none;
   }
   .logo {
-    font-size: 16px;
+    font-size: 20px;
   }
   .nav {
     padding: 15px;
+    height: 12vh;
   }
   input {
     width: 130px;

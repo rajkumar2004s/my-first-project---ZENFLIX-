@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-4 pl-4 p-2 pt-20 block md:hidden">
+  <div class="flex gap-4 pl-4 p-2 pt-24 block md:hidden">
     <router-link
       to="/"
       :class="['z-10 font-medium home ', route.path === '/' ? 'text-red-500' : 'text-white']"

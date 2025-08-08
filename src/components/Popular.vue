@@ -6,7 +6,7 @@
           <img
             :src="movie.poster_path"
             :alt="movie.title"
-            class="md:w-[160px] md:h-[210px] h-[230px] w-full object-cover rounded-md hover:scale-105 z-10 transition"
+            class="md:w-[160px] md:h-[210px] h-[250px] w-full object-cover rounded-md hover:scale-105 z-10 transition"
           />
         </router-link>
         <span
