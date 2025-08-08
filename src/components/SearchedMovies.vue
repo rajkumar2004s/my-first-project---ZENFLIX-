@@ -24,7 +24,7 @@
           <img
             :src="movie.backdrop_path || movie.poster_path"
             :alt="movie.title"
-            class="w-full md:w-[165px] h-full md:h-[220px] object-cover rounded-xl hover:scale-105 z-10 transition p-2"
+            class="w-full md:w-[165px] h-[230px] md:h-[220px] object-cover rounded-xl hover:scale-105 z-10 transition p-2"
           />
         </router-link>
       </div>

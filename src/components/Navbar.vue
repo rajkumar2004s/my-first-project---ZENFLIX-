@@ -139,7 +139,7 @@ input {
   }
   .nav {
     padding: 15px;
-    height: 12vh;
+    height: 11vh;
   }
   input {
     width: 130px;
