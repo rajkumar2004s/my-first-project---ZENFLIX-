@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-0 left-0 w-full flex justify-between items-center p-2 z-10 fixed nav">
+  <div class="absolute top-0 left-0 w-full flex justify-between items-center md:p-2 z-10 fixed nav">
     <div class="overlay"></div>
 
     <div class="flex items-center gap-4 pl-26 x">
@@ -138,7 +138,7 @@ input {
     font-size: 16px;
   }
   .nav {
-    padding: 10px;
+    padding: 15px;
   }
   input {
     width: 130px;

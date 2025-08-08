@@ -1,12 +1,12 @@
 <template>
   <div class="md:pt-24 md:pl-26 md:pr-24 md:pb-6">
     <div class="md:flex md:flex-wrap md:gap-2 grid grid-cols-2 pt-4 pb-4">
-      <div v-for="movie in movies" :key="movie.id" class="p-2 rounded-lg shadow relative">
+      <div v-for="movie in movies" :key="movie.id" class="p-2 rounded-md shadow relative">
         <router-link :to="`popular/${movie.id}`">
           <img
             :src="movie.poster_path"
             :alt="movie.title"
-            class="md:w-[160px] md:h-[210px] h-[230px] w-[180px] object-cover rounded-xl hover:scale-105 z-10 transition"
+            class="md:w-[160px] md:h-[210px] h-[210px] w-full object-cover rounded-md hover:scale-105 z-10 transition"
           />
         </router-link>
         <span
