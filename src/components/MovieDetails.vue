@@ -26,6 +26,11 @@
             Play
           </span>
         </button>
+        <button @click="addToFavs(movie)" class="border-1 w-[120px] p-2 rounded">
+          Add to Favs
+        </button>
+
+        <p v-if="showAddedToFavs" class="text-red-500 text-xl">Added to favs</p>
       </div>
     </div>
 
@@ -85,9 +90,11 @@
 <script setup>
 import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-
+import { useFavouritesStore } from '@/stores/favourites'
+const favouritesStore = useFavouritesStore()
 const route = useRoute()
 const movie = ref(null)
+const showAddedToFavs = ref(false)
 const token =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsIiwicm9sZSI6IlBSSU1FX1VTRVIiLCJpYXQiOjE2MTk2Mjg2MTN9.nZDlFsnSWArLKKeF0QbmdVfLgzUbx1BGJsqa2kc_21Y'
 const fetchMovieDetails = async () => {
@@ -108,6 +115,11 @@ const fetchMovieDetails = async () => {
 onMounted(fetchMovieDetails)
 
 watch(() => route.params.id, fetchMovieDetails)
+
+const addToFavs = (movie) => {
+  favouritesStore.addToFavourites(movie)
+  showAddedToFavs.value = true
+}
 </script>
 
 <style scoped>
