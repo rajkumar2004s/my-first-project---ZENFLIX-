@@ -125,7 +125,6 @@ svg {
 .container {
   position: relative;
   height: 100vh;
-  width: 100vw;
   background-size: cover;
   background-position: center;
   overflow: hidden;
