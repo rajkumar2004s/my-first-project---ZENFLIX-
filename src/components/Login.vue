@@ -114,6 +114,7 @@ const Login = () => {
     error.value = 'Please enter valid Credentials..'
   }
 }
+localStorage.setItem('showWelcome', 'true')
 </script>
 
 <style scoped>
