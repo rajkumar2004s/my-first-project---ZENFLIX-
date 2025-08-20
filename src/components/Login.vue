@@ -3,7 +3,7 @@
     <h1 class="logo text-center">ZENFLIX</h1>
 
     <div class="flex justify-center items-center relative z-20">
-      <div class="bg-[#141414] md:w-[25%] w-[80vw] h-[45vh] md:h-[50vh] p-6 rounded-md card">
+      <div class="bg-[#141414] md:w-[23vw] w-[80vw] h-[45vh] md:h-[50vh] p-6 rounded-md card">
         <h1 class="text-white text-2xl text-center pb-4 log">Login</h1>
 
         <label class="text-gray-400 bold">USERNAME</label>
@@ -84,10 +84,10 @@
         <p v-if="error" class="text-sm pt-4 text-red-500 text-center">{{ error }}</p>
       </div>
     </div>
-    <div class="pt-4">
+    <!-- <div class="pt-8 pr-18">
       <p class="text-white pl-24">Username : raju</p>
       <p class="text-white pl-24">Password : zenflix</p>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -123,14 +123,16 @@ svg {
   z-index: 10px;
 }
 .container {
-  position: relative;
+  /* position: relative; */
   height: 100vh;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
+  /* background-size: cover;
+  background-position: center; */
+  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 img {
