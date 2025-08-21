@@ -1,5 +1,6 @@
 <template>
-  <div class="md:p-6 text-white pt-2 md:pt-24">
+  <div class="md:p-6 text-white md:pt-24 pt-22">
+    <h1 class="text-white text-xl pl-2 md:pl-20">Favourite Movies</h1>
     <div
       v-if="loading"
       class="flex justify-center items-center text-red-500 text-2xl text-center pt-8"
@@ -49,4 +50,9 @@ const removefavourites = (movieId) => {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+</style>

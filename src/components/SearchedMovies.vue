@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 text-white pt-2 md:pt-24">
+  <div class="p-6 text-white pt-22 md:pt-24">
     <div
       v-if="loading"
       class="flex justify-center h-[70vh] items-center text-red-500 text-2xl text-center"

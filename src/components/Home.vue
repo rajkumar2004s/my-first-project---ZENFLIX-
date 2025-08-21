@@ -6,7 +6,7 @@
   </div>
 
   <div v-else>
-    <div class="flex justify-center items-center flex-col pt-4 md:pt-26">
+    <div class="flex justify-center items-center flex-col pt-22 md:pt-26">
       <div class="relative h-[250px] md:h-[475px] w-full md:w-[85%] overflow-hidden md:rounded-xl">
         <video
           :src="videoUrl"

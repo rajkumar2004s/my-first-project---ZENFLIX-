@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white bg-[#111] pb-4 pt-3 md:pt-0" v-if="movie">
+  <div class="text-white bg-[#111] pb-4 pt-3 pt-20 md:pt-0" v-if="movie">
     <div
       class="relative object-cover bg-cover bg-center w-[100vw] h-[60vh] md:h-[80vh] md:w-[99vw] shadow-md"
       :style="{ backgroundImage: `url(${movie.backdrop_path})` }"

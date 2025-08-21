@@ -58,7 +58,7 @@
         </div>
       </transition>
 
-      <MagnifyingGlassIcon class="w-4 md:w-8 h-6 text-white cursor-pointer" @click="toggle" />
+      <MagnifyingGlassIcon class="w-4 md:w-8 h-6 text-white cursor-pointer" @click="searchToggle" />
 
       <router-link to="/logout" class="md:block hidden">
         <button>
@@ -70,26 +70,16 @@
       </router-link>
 
       <div class="md:hidden" @click="toggleMenu">
-        <i class="fa-solid fa-bars text-[30px] text-[#3007b8] cursor-pointer z-10"></i>
+        <i class="fa-solid fa-bars text-white cursor-pointer text-[20px] z-10"></i>
       </div>
       <div
         v-show="showMenu"
         class="md:hidden pt-6 fixed top-[50px] left-0 w-full z-50 transition-all duration-300 ease-in-out"
       >
         <div
-          class="flex flex-col sm:flex-row justify-end font-Roboto text-white bg-gradient-to-r from-gray-900 via-black to-gray-900 font-semibold p-4 space-y-2 sm:space-y-0 sm:space-x-4"
+          class="flex flex-col sm:flex-row justify-end font-Roboto text-white via-black to-gray-900 font-semibold space-y-2 sm:space-y-0 sm:space-x-4"
         >
-          <!-- <a href="#home" class="hover:underline" @click="closeMenu">Home</a>
-          <a href="#aboutsection" class="hover:underline" @click="closeMenu">About</a>
-          <a href="#2024Editionsection" class="hover:underline" @click="closeMenu">2024 Edition</a>
-          <a href="#themessection" class="hover:underline" @click="closeMenu">Themes</a>
-          <a href="#problemstatementsection" class="hover:underline" @click="closeMenu"
-            >Problem Statement</a
-          >
-          <a href="#prizessection" class="hover:underline" @click="closeMenu">Prizes</a>
-          <a href="#schedulesection" class="hover:underline" @click="closeMenu">Timeline</a>
-          <a href="#badgesection" class="hover:underline" @click="closeMenu">Badges</a> -->
-          <smRouting />
+          <smRouting :showMenu="showMenu" @toggle="closeMenu" />
         </div>
       </div>
     </div>
@@ -105,19 +95,18 @@ const searchInput = ref('')
 const showSearch = ref(false)
 const showMenu = ref(false)
 
-function closeMenu() {
-  showMenu.value = !showMenu
-}
 function toggleMenu() {
+  showMenu.value = !showMenu.value
+}
+function closeMenu() {
   showMenu.value = !showMenu.value
 }
 const route = useRoute()
 const router = useRouter()
 
-const toggle = () => {
+const searchToggle = () => {
   showSearch.value = !showSearch.value
 }
-
 watch(searchInput, (newValue) => {
   if (newValue.trim() !== '') {
     router.push({ path: '/search', query: { q: newValue } })
@@ -172,6 +161,7 @@ input {
 @media screen and (max-width: 576px) {
   .home {
     display: none;
+    font-weight: bold;
   }
   .logo {
     font-size: 20px;

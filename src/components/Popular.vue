@@ -1,6 +1,7 @@
 <template>
-  <div class="md:pt-24 md:pl-26 md:pr-24 md:pb-6">
-    <div class="md:flex md:flex-wrap md:gap-2 grid grid-cols-2 pt-4 pb-4">
+  <div class="md:pt-24 pt-22 md:pl-26 md:pr-24 md:pb-6">
+    <h1 class="text-white text-xl pl-4 pt-0">Popular Movies</h1>
+    <div class="md:flex md:flex-wrap md:gap-2 grid grid-cols-2 pt-2 pb-4">
       <div v-for="movie in movies" :key="movie.id" class="p-2 rounded-md shadow relative">
         <router-link :to="`popular/${movie.id}`">
           <img
@@ -88,5 +89,9 @@ onMounted(() => {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+h1 {
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 </style>

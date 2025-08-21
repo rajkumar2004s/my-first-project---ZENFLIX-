@@ -152,6 +152,13 @@ img {
   font-weight: bold;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+@media (max-width: 576px) {
+  .modal {
+    position: absolute;
+    top: 82%;
+    left: 33%;
+  }
+}
 .log {
   font-weight: bold;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
