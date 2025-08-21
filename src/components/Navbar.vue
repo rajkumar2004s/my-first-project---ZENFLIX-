@@ -24,7 +24,15 @@
         >
           Popular
         </router-link>
-
+        <router-link
+          to="/toprated"
+          :class="[
+            'z-10 font-medium home',
+            route.path === '/toprated' ? 'text-red-500' : 'text-white',
+          ]"
+        >
+          Top Rated
+        </router-link>
         <router-link
           to="/favourites"
           :class="[
@@ -52,7 +60,7 @@
 
       <MagnifyingGlassIcon class="w-4 md:w-8 h-6 text-white cursor-pointer" @click="toggle" />
 
-      <router-link to="/logout">
+      <router-link to="/logout" class="md:block hidden">
         <button>
           <img
             :src="'https://res.cloudinary.com/dwdekki8t/image/upload/v1753264813/Avatar_1_cznbfr.png'"
@@ -60,6 +68,30 @@
           />
         </button>
       </router-link>
+
+      <div class="md:hidden" @click="toggleMenu">
+        <i class="fa-solid fa-bars text-[30px] text-[#3007b8] cursor-pointer z-10"></i>
+      </div>
+      <div
+        v-show="showMenu"
+        class="md:hidden pt-6 fixed top-[50px] left-0 w-full z-50 transition-all duration-300 ease-in-out"
+      >
+        <div
+          class="flex flex-col sm:flex-row justify-end font-Roboto text-white bg-gradient-to-r from-gray-900 via-black to-gray-900 font-semibold p-4 space-y-2 sm:space-y-0 sm:space-x-4"
+        >
+          <!-- <a href="#home" class="hover:underline" @click="closeMenu">Home</a>
+          <a href="#aboutsection" class="hover:underline" @click="closeMenu">About</a>
+          <a href="#2024Editionsection" class="hover:underline" @click="closeMenu">2024 Edition</a>
+          <a href="#themessection" class="hover:underline" @click="closeMenu">Themes</a>
+          <a href="#problemstatementsection" class="hover:underline" @click="closeMenu"
+            >Problem Statement</a
+          >
+          <a href="#prizessection" class="hover:underline" @click="closeMenu">Prizes</a>
+          <a href="#schedulesection" class="hover:underline" @click="closeMenu">Timeline</a>
+          <a href="#badgesection" class="hover:underline" @click="closeMenu">Badges</a> -->
+          <smRouting />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -68,10 +100,17 @@
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
-
+import smRouting from './smRouting.vue'
 const searchInput = ref('')
 const showSearch = ref(false)
+const showMenu = ref(false)
 
+function closeMenu() {
+  showMenu.value = !showMenu
+}
+function toggleMenu() {
+  showMenu.value = !showMenu.value
+}
 const route = useRoute()
 const router = useRouter()
 

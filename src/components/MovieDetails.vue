@@ -17,7 +17,7 @@
         <p class="mt-2 text-[10px] md:text-[16px] md:w-[632px]">{{ movie.overview }}</p>
 
         <button
-          class="mt-4 px-4 py-2 md:w-[120px] rounded text-white font-medium relative overflow-hidden z-10 border border-white group"
+          class="mt-4 px-4 py-2 w-[120px] rounded text-white font-medium relative overflow-hidden z-10 border border-white group"
         >
           <span
             class="absolute inset-0 bg-gradient-to-r from-[#6297ec] to-[#cb27c0] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
@@ -26,11 +26,17 @@
             Play
           </span>
         </button>
-        <button @click="addToFavs(movie)" class="border-1 w-[120px] p-2 rounded">
-          Add to Favs
+        <button
+          @click="addToFavs(movie)"
+          class="mt-4 px-4 py-2 w-[120px] rounded text-white font-medium relative overflow-hidden z-10 border border-white group"
+        >
+          <span
+            class="absolute inset-0 bg-gradient-to-r from-[#6297ec] to-[#cb27c0] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
+          ></span>
+          <span class="relative z-10 group-hover:font-bold transition-all duration-300">
+            {{ showAddedToFavs ? 'Remove' : 'Add' }}
+          </span>
         </button>
-
-        <p v-if="showAddedToFavs" class="text-red-500 text-xl">Added to favs</p>
       </div>
     </div>
 
@@ -91,6 +97,7 @@
 import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useFavouritesStore } from '@/stores/favourites'
+import router from '@/router'
 const favouritesStore = useFavouritesStore()
 const route = useRoute()
 const movie = ref(null)
@@ -112,13 +119,23 @@ const fetchMovieDetails = async () => {
   }
 }
 
-onMounted(fetchMovieDetails)
+onMounted(() => {
+  fetchMovieDetails().then(() => {
+    showAddedToFavs.value = favouritesStore.favourites.some((fav) => fav.id === movie.value?.id)
+  })
+})
 
 watch(() => route.params.id, fetchMovieDetails)
 
 const addToFavs = (movie) => {
-  favouritesStore.addToFavourites(movie)
-  showAddedToFavs.value = true
+  const index = favouritesStore.favourites.findIndex((fav) => fav.id === movie.id)
+  if (index === -1) {
+    favouritesStore.favourites.push(movie)
+    showAddedToFavs.value = !showAddedToFavs.value
+  } else {
+    favouritesStore.favourites.splice(index, 1)
+    showAddedToFavs.value = !showAddedToFavs.value
+  }
 }
 </script>
 

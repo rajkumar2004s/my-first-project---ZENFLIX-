@@ -13,7 +13,12 @@
     >
       Popular
     </router-link>
-
+    <router-link
+      to="/toprated"
+      :class="['z-10 font-medium home', route.path === '/toprated' ? 'text-red-500' : 'text-white']"
+    >
+      Top Rated
+    </router-link>
     <router-link
       to="/favourites"
       :class="[

@@ -1,7 +1,6 @@
 <template>
   <div class="bg-[#111111] overflow-x-hidden">
     <Navbar v-if="route.path != '/login' && route.name !== 'NotFound'" />
-    <smRouting v-if="route.path != '/login' && route.name !== 'NotFound'" />
     <router-view />
     <Footer v-if="route.path != '/login' && route.name !== 'NotFound'" />
   </div>
@@ -10,7 +9,6 @@
 <script setup>
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
-import smRouting from './components/smRouting.vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 </script>

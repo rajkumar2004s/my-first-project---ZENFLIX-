@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container relative">
     <h1 class="logo text-center">ZENFLIX</h1>
 
     <div class="flex justify-center items-center relative z-20">
@@ -26,7 +26,7 @@
             placeholder="Enter your password"
             @keyup.enter="Login"
             class="w-full pr-10 text-black"
-            v-tooltip="'Enter the Username'"
+            v-tooltip="'Enter the password'"
           />
           <span
             class="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer text-black-400"
@@ -80,18 +80,25 @@
         <div class="pt-6">
           <button @click="Login" class="bg-[#7d0101] text-white w-full py-2 rounded">Login</button>
         </div>
+        <div class="pt-4 flex justify-center" @click="showCredentialDetails">
+          <button class="rounded p-2 text-[16px] text-white">Check Credentials</button>
+        </div>
 
         <p v-if="error" class="text-sm pt-4 text-red-500 text-center">{{ error }}</p>
       </div>
     </div>
-    <!-- <div class="pt-8 pr-18">
-      <p class="text-white pl-24">Username : raju</p>
-      <p class="text-white pl-24">Password : zenflix</p>
-    </div> -->
+
+    <div class="bg-white text-black p-4 rounded modal" v-if="showCredentials">
+      <p>Username: raju</p>
+      <p>Password: zenflix</p>
+
+      <p class="text-center text-red-500" @click="showCredentialDetails">Close</p>
+    </div>
   </div>
 </template>
 
 <script setup>
+import { faL } from '@fortawesome/free-solid-svg-icons'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -99,9 +106,12 @@ const username = ref('')
 const password = ref('')
 const error = ref('')
 const showPassword = ref(false)
-
+const showCredentials = ref(false)
 const router = useRouter()
 
+const showCredentialDetails = () => {
+  showCredentials.value = !showCredentials.value
+}
 const togglePassword = () => {
   showPassword.value = !showPassword.value
 }
@@ -123,11 +133,7 @@ svg {
   z-index: 10px;
 }
 .container {
-  /* position: relative; */
   height: 100vh;
-  /* background-size: cover;
-  background-position: center; */
-  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -139,7 +145,13 @@ img {
   position: relative;
   z-index: 2;
 }
-
+.modal {
+  position: absolute;
+  top: 40%;
+  left: 70%;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .log {
   font-weight: bold;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
