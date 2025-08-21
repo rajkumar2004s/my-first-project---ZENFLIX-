@@ -21,7 +21,7 @@
       <div
         v-for="movie in favouritesStore.favourites"
         :key="movie.id"
-        class="p-2 md:p-3 rounded-lg shadow relative"
+        class="p-2 md:p-3 rounded-lg relative"
       >
         <router-link :to="`movie/${movie.id}`">
           <img
@@ -32,9 +32,14 @@
         </router-link>
         <span
           @click="removefavourites(movie.id)"
-          class="z-16 absolute top-[6%] left-[72%] text-xl md:text-2xl"
-          >❤️</span
+          class="z-5 absolute top-[6%] left-[72%] text-xl md:text-2xl"
         >
+          <img
+            :src="'https://res.cloudinary.com/dwdekki8t/image/upload/v1755766721/408e8073-eb31-4d5f-a20b-1d192ac04275_qiy89c.png'"
+            alt="Red Heart"
+            class="w-8 h-8"
+          />
+        </span>
       </div>
     </div>
   </div>

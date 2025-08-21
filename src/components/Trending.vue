@@ -44,9 +44,20 @@
           </router-link>
           <span
             @click="toggleFavourite(movie)"
-            class="z-16 absolute top-[9%] right-[7%] cursor-pointer text-2xl"
+            class="z-5 absolute top-[9%] right-[7%] cursor-pointer text-2xl"
           >
-            {{ isFavourite(movie.id) ? '❤️' : '🤍' }}
+            <img
+              v-if="isFavourite(movie.id)"
+              src="https://res.cloudinary.com/dwdekki8t/image/upload/v1755766721/408e8073-eb31-4d5f-a20b-1d192ac04275_qiy89c.png"
+              alt="Red Heart"
+              class="w-8 h-8"
+            />
+            <img
+              v-else
+              src="https://res.cloudinary.com/dwdekki8t/image/upload/v1755767842/unnamed-removebg-preview_glihrh.png"
+              alt="White Heart"
+              class="w-8 h-8"
+            />
           </span>
         </div>
       </div>

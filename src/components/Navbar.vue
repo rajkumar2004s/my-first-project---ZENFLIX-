@@ -169,6 +169,7 @@ input {
   .nav {
     padding: 15px;
     height: 11vh;
+    background-color: black;
   }
   input {
     width: 130px;

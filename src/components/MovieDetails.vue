@@ -17,18 +17,16 @@
         <p class="mt-2 text-[10px] md:text-[16px] md:w-[632px]">{{ movie.overview }}</p>
 
         <button
-          class="mt-4 px-4 py-2 w-[120px] rounded text-white font-medium relative overflow-hidden z-10 border border-white group"
+          class="mt-4 px-4 py-2 w-[120px] rounded text-white font-medium relative overflow-hidden z-2 border border-white group"
         >
           <span
             class="absolute inset-0 bg-gradient-to-r from-[#6297ec] to-[#cb27c0] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
           ></span>
-          <span class="relative z-10 group-hover:font-bold transition-all duration-300">
-            Play
-          </span>
+          <span class="relative z-2 group-hover:font-bold transition-all duration-300"> Play </span>
         </button>
         <button
           @click="addToFavs(movie)"
-          class="mt-4 px-4 py-2 w-[120px] rounded text-white font-medium relative overflow-hidden z-10 border border-white group"
+          class="mt-4 px-4 py-2 w-[120px] rounded text-white font-medium relative overflow-hidden z-2 border border-white group"
         >
           <span
             class="absolute inset-0 bg-gradient-to-r from-[#6297ec] to-[#cb27c0] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
