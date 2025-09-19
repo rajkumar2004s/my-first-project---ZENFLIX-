@@ -61,10 +61,7 @@
       <MagnifyingGlassIcon class="w-4 md:w-8 h-6 text-white cursor-pointer" @click="searchToggle" />
 
       <div class="hidden md:block">
-        <button
-          @click="logout"
-          class="bg-[#050404] border p-2 rounded-sm text-white w-[120px] z-10"
-        >
+        <button @click="logout" class="border p-2 rounded-sm text-white w-[120px] z-10">
           <i class="fa-solid fa-right-from-bracket"></i> Logout
         </button>
       </div>
