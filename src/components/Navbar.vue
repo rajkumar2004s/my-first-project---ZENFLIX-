@@ -60,14 +60,14 @@
 
       <MagnifyingGlassIcon class="w-4 md:w-8 h-6 text-white cursor-pointer" @click="searchToggle" />
 
-      <router-link to="/logout" class="md:block hidden">
-        <button>
-          <img
-            :src="'https://res.cloudinary.com/dwdekki8t/image/upload/v1753264813/Avatar_1_cznbfr.png'"
-            class="w-6 md:w-12 z-10 pt-2"
-          />
+      <div class="hidden md:block">
+        <button
+          @click="logout"
+          class="bg-[#050404] border p-2 rounded-sm text-white w-[120px] z-10"
+        >
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
         </button>
-      </router-link>
+      </div>
 
       <div class="md:hidden" @click="toggleMenu">
         <i class="fa-solid fa-bars text-white cursor-pointer text-[20px] z-10"></i>
@@ -94,6 +94,11 @@ import smRouting from './smRouting.vue'
 const searchInput = ref('')
 const showSearch = ref(false)
 const showMenu = ref(false)
+
+const logout = () => {
+  localStorage.removeItem('token')
+  router.push('/login')
+}
 
 function toggleMenu() {
   showMenu.value = !showMenu.value
