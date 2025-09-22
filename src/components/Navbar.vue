@@ -61,8 +61,11 @@
       <MagnifyingGlassIcon class="w-4 md:w-8 h-6 text-white cursor-pointer" @click="searchToggle" />
 
       <div class="hidden md:block">
-        <button @click="logout" class="border p-2 rounded-sm text-white w-[120px] z-10">
-          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        <button
+          class="active-glow shiny-btn text-white border h-8 px-4 text-sm rounded border-red-500"
+          @click="logout"
+        >
+          Logout
         </button>
       </div>
 
@@ -182,5 +185,59 @@ input {
     padding-left: 0;
     padding-right: 0;
   }
+}
+
+.shiny-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease-in-out,
+    background 0.3s ease;
+}
+
+.shiny-btn:hover {
+  transform: scale(1.05);
+}
+
+.shiny-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+}
+
+.shiny-btn:hover::before {
+  animation: shine 0.8s forwards;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+.active-glow {
+  box-shadow:
+    0 0 5px rgba(205, 52, 21, 0.7),
+    0 0 10px rgba(159, 10, 35, 0.5);
 }
 </style>
